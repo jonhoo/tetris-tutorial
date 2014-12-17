@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>My Little Tetris</title>
+		<style>
+			html { background: #F7F7F7; }
+			#board {
+				margin: 0 auto;
+				display: block;
+				border: 2px solid black;
+				border-bottom: 5px solid green;
+				background: white;
+			}
+			#lines {
+				display: block;
+				width: 240px;
+				margin: 0 auto;
+				margin-top: 2em;
+				color: #444;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<span id="lines">Lines: 0</span>
+		<canvas id="board">
+		</canvas>
+		<script src="tetrominoes.js"></script>
+		<script src="tetris.js"></script>
+	</body>
+</html>
