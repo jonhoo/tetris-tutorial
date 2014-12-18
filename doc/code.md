@@ -250,7 +250,9 @@ First, let's get some of the syntax out of the way.
   - `somevariable[1]` refers to the 1st element of the list in `somevariable`.
     It is important to note that lists in **most** programming languages are
     *zero-indexed*, so the **first** element in a list of length `n` is `[0]`,
-    and the **last** is `[n-1]`!
+    and the **last** is `[n-1]`! If `somevariable[1]` is itself a list, the
+    `[]` operator can be used again to get an element of that nested list as
+    `somevariable[1][1]`.
 
 Now, we are ready to consider what was probably the most confusing bit in the
 code fragment above; the `for` lines.
