@@ -5,30 +5,33 @@ Hello.
 My step-brother was playing Tetris today, but was getting annoyed about all the
 ads and the "recharge time" in the game, and vented his frustration to me.
 After pointing out that there are probably thousands of completely
-frustration-free (well, apart from gameplay) Tetris clones out there, I
-jokingly told him to go write his own Tetris game. His knee-jerk reaction was
-"I could never do that". After questioning him a bit, he revealed that he
-actually thought that doing so could be quite fun if only there was a good way
-for him to learn how to do so without studying Computer Science for years. This
-is my attempt to make that possible.
+frustration-free (well, apart from the gameplay) Tetris clones out there, I
+jokingly told him to go write his own Tetris game instead. His immediate
+reaction was "I could never do that". After some interrogration, he revealed
+that he actually thought that doing so could be quite fun, if only there was a
+good way for him to learn how to do so without studying Computer Science for
+years. This is my attempt to make that possible.
 
 ## The game
 
 If all you want to do is play Tetris, there is a working implementation in the
 root of this repository that you can launch by opening index.html in any modern
-browser. It even implements the [Super Rotation
+browser. Just
+[download](https://github.com/jonhoo/tetris-tutorial/archive/master.zip) the
+code, extract it somewhere, do File->Open in your browser, and select the
+index.html file. It even implements the [Super Rotation
 System](http://tetris.wikia.com/wiki/SRS) correctly, if you care about that.
 It's quite rudimentary (no levels, no sound, no "next piece", etc.), but fully
 playable, and quite small.
 
 ## The tutorial
 
-The meat of this repository is (/will be) in [doc/](doc/), which holds all the
-tutorial text. You start with the [intro](doc/intro.md), and follow the links
-from there. It attempts to cover everything from the very basics (what is a
-variable?) to how to build a complete, working Tetris game, so it is (/will be)
-quite long, but hopefully it will be a good primer for those trying to get into
-programming, but finding "introduction to JavaScript" style tutorials
+The meat of this repository is in [doc/](doc/), which holds all the tutorial
+text. You start with the [intro](doc/intro.md), and follow the links from
+there. I attempt to cover everything from the very basics (what is a variable?)
+to how to build a complete, working Tetris game, so it is (/will be) quite
+long, but hopefully it will be a good primer for those trying to get into
+programming, but who find "introduction to JavaScript" style tutorials
 completely uninteresting.
 
 ## Progress
@@ -41,5 +44,8 @@ getting something out of it, I'm more inclined to continue.
 
 ## Feedback
 
-Yes please! Open an issue using the GitHub issue tracker, send a pull request
-with improvement suggestions, or just send me an email. I'm not hard to find.
+Yes please! Open an issue using the GitHub [issue
+tracker](https://github.com/jonhoo/tetris-tutorial/issues), send a [pull
+request](https://github.com/jonhoo/tetris-tutorial/pulls) with improvement
+suggestions, or just send me an [email](mailto:jon@thesquareplanet.com).
+I'm not hard to get a hold of.
