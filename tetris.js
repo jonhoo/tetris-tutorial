@@ -44,14 +44,14 @@ function Piece(patterns, color) {
 
 Piece.prototype.rotate = function() {
 	var nudge = 0;
-	newpat = this.patterns[(this.patterni + 1) % this.patterns.length];
+	var nextpat = this.patterns[(this.patterni + 1) % this.patterns.length];
 
-	if (this._collides(0, 0, newpat)) {
+	if (this._collides(0, 0, nextpat)) {
 		// Check kickback
 		nudge = this.x > width / 2 ? -1 : 1;
 	}
 
-	if (!this._collides(nudge, 0, newpat)) {
+	if (!this._collides(nudge, 0, nextpat)) {
 		this.undraw();
 		this.x += nudge;
 		this.patterni = (this.patterni + 1) % this.patterns.length;
@@ -63,15 +63,14 @@ Piece.prototype.rotate = function() {
 var WALL = 1;
 var BLOCK = 2;
 Piece.prototype._collides = function(dx, dy, pat) {
-	var that = this;
 	for (var ix = 0; ix < pat.length; ix++) {
 		for (var iy = 0; iy < pat.length; iy++) {
 			if (!pat[ix][iy]) {
 				continue;
 			}
 
-			var x = that.x + ix + dx;
-			var y = that.y + iy + dy;
+			var x = this.x + ix + dx;
+			var y = this.y + iy + dy;
 			if (y >= height || x < 0 || x >= width) {
 				return WALL;
 			}
