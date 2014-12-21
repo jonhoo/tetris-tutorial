@@ -152,9 +152,9 @@ saying "the function `draw` should be present on all instances of the class
 ### Moving the tetrominoes
 
 If tetrominoes were stationary, Tetris would not be a particularly interesting
-game. We need them to drop down, and we need them to be able to move left and
-right. Now that we know about classes and methods though, this should be a
-breeze:
+game. We need them to drop down, we need them to be able to move left and
+right, and we need them to be rotatable. Now that we know about classes and
+methods though, this should be a breeze:
 
 ```javascript
 Piece.prototype.down = function() {
@@ -174,9 +174,24 @@ Piece.prototype.moveLeft = function() {
 	this.x--;
 	this.draw();
 };
+
+Piece.prototype.rotate = function() {
+	this.undraw();
+	this.patterni = (this.patterni + 1) % this.patterns.length;
+	this.pattern = this.patterns[this.patterni];
+	this.draw();
+};
 ```
 
-Hmm, but what's this `undraw` function? Well, if we just drew the tetromino in
+Rotate might look a bit weird, as it is using the modulo (`%`) operator. This
+operator is very useful in programming, as it makes a counter "wrap around"
+when it reaches a certain number. For example, if we are counting "modulo 4",
+then if we iterate through all integral numbers, we would get 0, 1, 2, 3, 0, 1,
+2, 3, 0, etc. When the user rotates a piece, this is precisely what we want.
+When the last rotation is being used, rotating again should bring them back to
+the first rotation pattern (`[0]`).
+
+But what's this `undraw` function? Well, if we just drew the tetromino in
 its new location, and did not draw anything where it used to be, the square we
 drew before it moved would still be in place, and the user would be very
 confused, as the tetromino would appear to be growing in size! To avoid this,
