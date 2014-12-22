@@ -17,13 +17,13 @@ for (var r = 0; r < height; r++) {
 }
 
 function newPiece() {
-	piece = pieces[parseInt(Math.random() * pieces.length, 10)];
-	return new Piece(piece[0], piece[1]);
+	var p = pieces[parseInt(Math.random() * pieces.length, 10)];
+	return new Piece(p[0], p[1]);
 }
 
 function drawSquare(x, y) {
 	ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
-	ss = ctx.strokeStyle;
+	var ss = ctx.strokeStyle;
 	ctx.strokeStyle = "#555";
 	ctx.strokeRect(x * tilesz, y * tilesz, tilesz, tilesz);
 	ctx.strokeStyle = "#888";
@@ -117,20 +117,19 @@ Piece.prototype.moveLeft = function() {
 var lines = 0;
 var done = false;
 Piece.prototype.lock = function() {
-	var that = this;
 	for (var ix = 0; ix < this.pattern.length; ix++) {
 		for (var iy = 0; iy < this.pattern.length; iy++) {
 			if (!this.pattern[ix][iy]) {
 				continue;
 			}
 
-			if (that.y + iy < 0) {
+			if (this.y + iy < 0) {
 				// Game ends!
 				alert("You're done!");
 				done = true;
 				return;
 			}
-			board[that.y + iy][that.x + ix] = that.color;
+			board[this.y + iy][this.x + ix] = this.color;
 		}
 	}
 
@@ -161,7 +160,7 @@ Piece.prototype.lock = function() {
 };
 
 Piece.prototype._fill = function(color) {
-	fs = ctx.fillStyle;
+	var fs = ctx.fillStyle;
 	ctx.fillStyle = color;
 	var x = this.x;
 	var y = this.y;
@@ -195,7 +194,6 @@ var pieces = [
 var piece = null;
 
 var dropStart = Date.now();
-var keysDown = {};
 document.body.addEventListener("keypress", function (e) {
 	if (e.keyCode == 38) { // Player pressed up
 		piece.rotate();
@@ -215,7 +213,7 @@ document.body.addEventListener("keypress", function (e) {
 }, false);
 
 function drawBoard() {
-	fs = ctx.fillStyle;
+	var fs = ctx.fillStyle;
 	for (var y = 0; y < height; y++) {
 		for (var x = 0; x < width; x++) {
 			ctx.fillStyle = board[y][x] || clear;
