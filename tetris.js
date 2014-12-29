@@ -28,7 +28,7 @@ function drawSquare(x, y) {
 	ctx.strokeRect(x * tilesz, y * tilesz, tilesz, tilesz);
 	ctx.strokeStyle = "#888";
 	ctx.strokeRect(x * tilesz + 3*tilesz/8, y * tilesz + 3*tilesz/8, tilesz/4, tilesz/4);
-	ctx.strokeStyle = fs;
+	ctx.strokeStyle = ss;
 }
 
 function Piece(patterns, color) {
