@@ -194,23 +194,38 @@ var pieces = [
 var piece = null;
 
 var dropStart = Date.now();
-document.body.addEventListener("keypress", function (e) {
-	if (e.keyCode == 38) { // Player pressed up
+var downI = {};
+document.body.addEventListener("keydown", function (e) {
+	if (downI[e.keyCode] !== null) {
+		clearInterval(downI[e.keyCode]);
+	}
+	key(e.keyCode);
+	downI[e.keyCode] = setInterval(key.bind(this, e.keyCode), 200);
+}, false);
+document.body.addEventListener("keyup", function (e) {
+	if (downI[e.keyCode] !== null) {
+		clearInterval(downI[e.keyCode]);
+	}
+	downI[e.keyCode] = null;
+}, false);
+
+function key(k) {
+	if (k == 38) { // Player pressed up
 		piece.rotate();
 		dropStart = Date.now();
 	}
-	if (e.keyCode == 40) { // Player holding down
+	if (k == 40) { // Player holding down
 		piece.down();
 	}
-	if (e.keyCode == 37) { // Player holding left
+	if (k == 37) { // Player holding left
 		piece.moveLeft();
 		dropStart = Date.now();
 	}
-	if (e.keyCode == 39) { // Player holding right
+	if (k == 39) { // Player holding right
 		piece.moveRight();
 		dropStart = Date.now();
 	}
-}, false);
+}
 
 function drawBoard() {
 	var fs = ctx.fillStyle;
