@@ -15,7 +15,7 @@ years. This is my attempt to make that possible.
 ## The game
 
 If all you want to do is play Tetris, there is a working implementation in the
-root of this repository which you can launch by clicking <a href="https://rawgit.com/jonhoo/tetris-tutorial/master/index.html" target="_target">this link</a>. It even implements the [Super Rotation
+root of this repository which you can launch by clicking <a href="https://rawgit.com/jonhoo/tetris-tutorial/master/index.html" target="_blank">this link</a>. It even implements the [Super Rotation
 System](http://tetris.wikia.com/wiki/SRS) correctly, if you care about that.
 It's quite rudimentary (no levels, no sound, no "next piece", etc.), but fully
 playable, and quite small.
