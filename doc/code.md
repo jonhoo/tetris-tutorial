@@ -53,11 +53,14 @@ To store something temporary (the user is unlikely to run the game forever) in
 a computer program, we usually put things in the computer's *memory*. The
 memory stores sequences 0s and 1s, and lets developers access them by giving an
 offset into the memory. The memory an application can see is, in most cases,
-private to the application, and initialized to all 0s. Since the values in an
-application's memory represent everything it knows, we sometimes refer to it as
-the program's *state*. A program's state also includes certain other things
-such as open files and network connections that the application learns about
-while executing.
+private to the application. In JavaScript, and many other interpreted
+languages, the contents of memory are initialized to all 0s; other
+languages, often lower-level ones like C, require memory to be
+explicitly initialized before it can be used. Since the values in an
+application's memory represent everything it knows, we sometimes refer
+to it as the program's *state*. A program's state also includes certain
+other things such as open files and network connections that the
+application learns about while executing.
 
 An offset into memory (a memory *address*) is usually given in *bytes* (eight
 bits), as in "give me the 63rd byte" or "write this data to the 185th byte". A
