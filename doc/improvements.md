@@ -6,8 +6,7 @@ to be fixed:
   - If a piece is up against a wall, and a rotation is considered invalid only
     because it would place a block ourside the edges of the board, the block
     should be "kicked" to the side to make room for it. This is referred to as
-    [wall kicking](https://developer.chrome.com/devtools/docs/console) in
-    Tetris.
+    [wall kicking](http://tetris.wikia.com/wiki/Wall_kick) in Tetris.
   - It's really inconvenient for the user that their score is displayed in the
     developer console. Instead, we want the score to be shown directly on the
     page holding the game.
