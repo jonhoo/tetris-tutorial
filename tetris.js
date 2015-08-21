@@ -210,6 +210,9 @@ document.body.addEventListener("keyup", function (e) {
 }, false);
 
 function key(k) {
+	if (done) {
+		return;
+	}
 	if (k == 38) { // Player pressed up
 		piece.rotate();
 		dropStart = Date.now();
