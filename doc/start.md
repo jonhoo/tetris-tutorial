@@ -66,7 +66,7 @@ extremely complicated (the entire program is ~250 lines), we are not going to
 need any external libraries (apart from the browser) for our game.
 
 To be technically correct, we will be relying on the HTML "framework" in the
-sense that the browser providers a lot of functionality to us by being able to
+sense that the browser provides a lot of functionality to us by being able to
 render things on screen very easily. We will also be using the "canvas" feature
 supported in modern browsers, that allows us to draw arbitary things, not just
 build website-like things.
