@@ -110,7 +110,7 @@ canvas.height = height * tilesz;
 If we're going to draw a 20x10 grid of tiles, each 24x24 pixels in size, we
 need to make sure the canves we're drawing on is large enough. These lines
 change the width and height of the HTML canvas to be the appropriate size. Note
-that I said the width *of* the canvas. Similar to how we can assing functions
+that I said the width *of* the canvas. Similar to how we can assign functions
 to variables, we can also assign variables to variables. This is the basis of
 Object-Oriented Programming, something we'll be exposed to later in this
 tutorial.
